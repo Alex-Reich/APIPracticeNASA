@@ -1,11 +1,11 @@
 function NasaController() {
 //private 
-var nasaService = new nasaService();
+var nasaService = new NasaService();
 
-function drawSpaceData(arr) {
+function drawSpaceData(day) {
 var template=""
-for (let i = 0; i < arr.length; i++) {
-    const day = arr[i];
+// for (let i = 0; i < arr.length; i++) {
+//     const day = arr[i];
     template +=`
     <img src="${day.url}">
     <h1>Title: ${day.title}</h1>
@@ -17,11 +17,11 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 
-}
+nasaService.getSpaceData("&date=2018-01-02", drawSpaceData)
+}/////////////////////////////
 
 
 
 
 
-}
 
